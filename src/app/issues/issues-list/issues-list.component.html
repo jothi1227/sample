@@ -1,0 +1,13 @@
+<div class="row">
+    <ul *ngFor="let iss of issue">
+      <div class="card col-sm">
+        <div class="card-body">
+          <p class="card-title"> <strong>TITLE: </strong>{{iss.title}}</p>
+          <p class="card-text"> <strong>DESCRIPTION: </strong>{{iss.description}}
+          </p>
+          <a [routerLink]="['/issues-edit', iss.id]" class="btn btn-primary butn">Edit</a>
+          <button (click)="deleteIssue(iss.id)" class="btn btn-danger butn">Delete</button>
+        </div>
+      </div>
+    </ul>
+  </div>

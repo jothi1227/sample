@@ -1,0 +1,38 @@
+<div class="container register">
+  <div class="row">
+
+    <div class="col-md-12 register-right">
+
+      <div class="row register-form">
+        <div class="col-md-12">
+          <form class="form-horizontal" #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmit()">
+            <div class="form-group">
+              <input type="text" class="form-control formtxt" #titlevalid="ngModel" required name="title" [(ngModel)]="title"
+                placeholder="Enter Title" value="" />
+
+                <div *ngIf="titlevalid.errors && (titlevalid.dirty || titlevalid.touched)">
+                  <p  class="text-danger" *ngIf="titlevalid.errors.required">Title is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control formtxt" #descriptionvalid="ngModel" required name="description" [(ngModel)]="description"
+                placeholder="Enter description" value="" />
+
+                <div *ngIf="descriptionvalid.errors && (descriptionvalid.dirty || descriptionvalid.touched)">
+                  <p  class="text-danger" *ngIf="descriptionvalid.errors.required">description is required</p>
+                </div>
+            </div>
+           
+            <input type="submit" class="btn btn-success" value="Save" />
+          </form>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</div>
